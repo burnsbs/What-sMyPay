@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         RetailSales = (EditText) findViewById(R.id.RetailSales);
         message = (TextView) findViewById(R.id.message);
         message2 = (TextView) findViewById(R.id.message2);
+        // test to see if my edits are saved.
 
 
 
