@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     EditText PaidBackBarPrct; //my app doesn't have these.  I can't tell what they do. bsb
-    EditText THPC; //I think they may be creating objects which are defined later.
+    EditText THPC; //I think they may be declaring objects which are defined later.
     EditText ServiceDlrsPerHr;
     EditText CPTH;
     EditText RetailSales;
@@ -23,10 +23,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PaidBackBarPrct = (EditText) findViewById(R.id.PaidBackBarPerc); //this look like it is defining an object which was created on line 13.
+        PaidBackBarPrct = (EditText) findViewById(R.id.PaidBackBarPerc); //this look like it is defining an object which was declared on line 13.
         // would it work to say...
         // EditText PaidBackBarPrct = (EditText) findViewById(R.id.PaidBackBarPerc); // and remove line 13?
-        THPC =(EditText) findViewById(R.id.THPC);
+        // ... I researched this and believe that I'm understanding correctly.
+        THPC =(EditText) findViewById(R.id.THPC); // if these are all numbers, you can change the keyboard by editing activity_main.xml (android:inputType="phone")
         ServiceDlrsPerHr =(EditText) findViewById(R.id.ServiceDlrsPerHr);
         CPTH =(EditText) findViewById(R.id.CPTH);
         RetailSales = (EditText) findViewById(R.id.RetailSales);
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void CommissionStatusClicked(View v){
         float PaidBackBarMin = 40;
-        float PaidBackBar = Float.parseFloat(PaidBackBarPrct.getText().toString());
+        float PaidBackBar = Float.parseFloat(PaidBackBarPrct.getText().toString()); // this converts string to float?
         float THPC_Min = (float) 1.5;
         float RetailPerClient = Float.parseFloat(THPC.getText().toString());
         float SDPH_Min = (float)40;
