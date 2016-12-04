@@ -60,9 +60,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void CommissionStatusClicked(View v){
-        float PaidBackBarMin = 40;
+        float PaidBackBarMin = 40; // not explicitly cast as float
         float PaidBackBar = Float.parseFloat(PaidBackBarPrct.getText().toString()); // this converts string to float?
-        float THPC_Min = (float) 1.5;
+        float THPC_Min = (float) 1.5; // this is explicity cast--does it matter?
         float RetailPerClient = Float.parseFloat(THPC.getText().toString());
         float SDPH_Min = (float)40;
         float SDPH = Float.parseFloat(ServiceDlrsPerHr.getText().toString());
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
             counter = 0;
         }
         }
-    public void SalesCommissionStatusClicked(View v){
+    public void SalesCommissionStatusClicked(View v){ // I don't see where this is called.  Are you still working it or am I not seeing it?
         float Retail_min = 100;
         float RetailSalesEntered = Float.parseFloat(RetailSales.getText().toString());
         int RetailPrctEarned = 0;
@@ -109,8 +109,8 @@ public class MainActivity extends AppCompatActivity {
             message2.setText("You will earn 20% Sales Commission!");
             RetailPrctEarned=0;
             }
-        else if (RetailPrctEarned <10){
-                    message2.setText("Sorry! You haven't earnrd Sales Commission yet");
+        else if (RetailPrctEarned <10){  // Two notes: (1) you don't need the if statement you can end w/ an else.  (2) if you do use an if, it should be < 1 not < 10.
+                    message2.setText("Sorry! You haven't earned Sales Commission yet");
             RetailPrctEarned=0;
             }
         }
