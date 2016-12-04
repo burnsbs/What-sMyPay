@@ -1,5 +1,6 @@
 package com.shearlogicllc.whatsmypay;
 
+// import android.content.Intent; //<-- my version has this. bsb
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +10,8 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
-    EditText PaidBackBarPrct;
-    EditText THPC;
+    EditText PaidBackBarPrct; //my app doesn't have these.  I can't tell what they do. bsb
+    EditText THPC; //I think they may be creating objects which are defined later.
     EditText ServiceDlrsPerHr;
     EditText CPTH;
     EditText RetailSales;
@@ -22,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        PaidBackBarPrct = (EditText) findViewById(R.id.PaidBackBarPerc);
+        PaidBackBarPrct = (EditText) findViewById(R.id.PaidBackBarPerc); //this look like it is defining an object which was created on line 13.
+        // would it work to say...
+        // EditText PaidBackBarPrct = (EditText) findViewById(R.id.PaidBackBarPerc); // and remove line 13?
         THPC =(EditText) findViewById(R.id.THPC);
         ServiceDlrsPerHr =(EditText) findViewById(R.id.ServiceDlrsPerHr);
         CPTH =(EditText) findViewById(R.id.CPTH);
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //final String affermation2 = "Yes...you rock!";
+        //final String affirmation2 = "Yes...you rock!";
         //final TextView affirmation_text =(TextView) findViewById(R.id.affirmation_text);
         //final Button button_Stat=(Button) findViewById(R.id.button_Stat);
         //button_Stat.setOnClickListener(new View.OnClickListener() {
