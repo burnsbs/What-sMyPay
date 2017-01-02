@@ -11,6 +11,7 @@
     <string name="PaidBackBarPercHint">Enter Paid BB %</string>
     <string name="HoursWorkedHint">Enter Hours Worked</string>
     //<string name="RetailSales">Retail Sales </string>
+    <!-- retailSales -->
     <string name="RetailSalesHint">Enter Retail Sales</string>
     <string name="RetailPerClient">Retail per Client (THPC)</string>
     <string name="RetailPerClientHint">Enter THPC</string>
