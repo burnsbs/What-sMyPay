@@ -106,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
             RetailPrctEarned=0;
             }
         else if (RetailPrctEarned <10){
-                    message2.setText("Sorry! You haven't earnrd Sales Commission yet");
+                    message2.setText("Sorry! You haven't earned Sales Commission yet");
+            // fixed spelling of earned
             RetailPrctEarned=0;
             }
         }
