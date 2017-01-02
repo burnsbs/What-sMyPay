@@ -65,26 +65,39 @@ public class MainActivity extends AppCompatActivity {
         float CPTH_Min = (float) 1.5;
         float CutsPerTotalHours = Float.parseFloat(CPTH.getText().toString());
         int counter = 0;
+        // my changes begin -b
+        // I reversed the logic and added specific messages for each case -b
+        String ServiceCommissionMsg = "";
+        System.out.println(ServiceCommissionMsg);
 
-
-        if(PaidBackBar >= PaidBackBarMin){
+        if(PaidBackBar < PaidBackBarMin){
             counter ++;
+            ServiceCommissionMsg = ServiceCommissionMsg + "  You did not meet Paid Back Bar Min.";
+            System.out.println(ServiceCommissionMsg);
         }
-        if(RetailPerClient >= THPC_Min){
+        if(RetailPerClient < THPC_Min){
             counter ++;
+            ServiceCommissionMsg = ServiceCommissionMsg + "  You did not meet THPC Min.";
+            System.out.println(ServiceCommissionMsg);
         }
-        if(SDPH >= SDPH_Min){
+        if(SDPH < SDPH_Min){
             counter ++;
+            ServiceCommissionMsg = ServiceCommissionMsg + "  You did not meet SDPH Min.";
+            System.out.println(ServiceCommissionMsg);
         }
-         if(CutsPerTotalHours>= CPTH_Min){
-             counter ++;
+        if(CutsPerTotalHours < CPTH_Min){
+            counter ++;
+            ServiceCommissionMsg = ServiceCommissionMsg + "  You did not meet CPTH Min.";
+            System.out.println(ServiceCommissionMsg);
          }
-        if(counter == 4){
+        if(counter == 0){
             message.setText("Great Job! You will make service commission!");
-        }else if (counter < 4){
-            message.setText("Sorry! You are missing at least one of the requirements");
+        }
+        else {
+            message.setText("Sorry! You are missing at least one of the requirements" + ServiceCommissionMsg);
             counter = 0;
         }
+        // my changes end -b
         }
     public void SalesCommissionStatusClicked(View v){
         float Retail_min = 100;
